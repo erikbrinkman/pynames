@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="A simple tool for helping to name python projects">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PyNames</title>
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#00796b">
+        <link rel="icon" sizes="192x192" href="pynames-192.png">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#00796b">
+        <meta name="apple-mobile-web-app-title" content="PyNames">
+        <link rel="apple-touch-icon-precomposed" href="pynames-192.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="pynames-144.png">
+        <meta name="msapplication-TileColor" content="#3372DF">
+        <meta name="msapplication-navbutton-color" content="#00796b">
+
+        <!-- Default favicon -->
+        <link rel="shortcut icon" href="pynames.png">
+
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.teal-amber.min.css">
+        <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <img src="pynames.svg" class="mdl-layout-icon">
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout__title"><a href=".">PyNames</a></span>
+                    <form id="search">
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="text" id="search-box">
+                            <label class="mdl-textfield__label" for="search">Enter a Keyword...</label>
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--icon" id="search-cancel">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+            <div id="progress" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+            <div id="greeting" class="active"><p>Type a Keyword to get started!
+                <i class="material-icons">arrow_upward</i></p><p>PyNames is a
+                   simple tool to help name python projects so they contain
+                   "py". Enter a keyword in the search box to get a list of
+                   potential python project names with various info about how
+                   the names were derived. This tries to bias towards names
+                   that are less contrived, but only uses a set of simple
+                   heuristics.</p></div>
+            <div id="results"></div>
+            <div id="no-results"><i class="material-icons">modd_bad</i> No results were found.</div>
+            <div id="error-message"><i class="material-icons">mood_bad</i> Synonyms could not be loaded. Please try again later.</div>
+            </main>
+            <footer class="mdl-mini-footer" id="footer">
+                <div class="mdl-mini-footer__left-section">
+                    Thanks to <a href="//www.abbreviations.com/" target="_blank">StandS4</a> for providing access to their api.
+                </div>
+            </footer>
+        </div>
+        <script src="//storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

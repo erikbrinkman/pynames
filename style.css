@@ -1,0 +1,155 @@
+body {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+.mdl-layout__title > a {
+    color: white;
+}
+
+dl.info {
+    margin: 0;
+}
+
+dl.info > dd:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+ul.inline, ul.mimic-inline {
+    margin: 0;
+    padding: 0;
+}
+
+ul.inline > li {
+    display: inline-block;
+}
+
+ul.inline > li:not(:last-child):after, ul.mimic-inline > li:before {
+    content: "\0000a0•\0000a0";
+    font-weight: bold;
+}
+
+ul.mimic-inline {
+    list-style-type: none;
+}
+
+ul.mimic-inline > li:before {
+    position: absolute;
+    transform: translateX(-100%);
+}
+
+#search {
+    margin-left: 1em;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+#search > div {
+    width: 100%;
+}
+
+#search input, #search label {
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+#search label {
+    padding-top: 0.25em;
+}
+
+#search input {
+    margin-left: 0;
+    background-color: white;
+    border-radius: 0.1em;
+}
+
+#search label::after {
+    background-color: rgb(255,215,64);
+}
+
+#search input, #search-cancel {
+    color: rgba(0,0,0,0.87);
+}
+
+#search-cancel {
+    position: absolute;
+    right: 0;
+    transform: translateX(-10%);
+    opacity: 0;
+    display: none;
+    transition: opacity ease 0.2s, display step-end 0.2s;
+}
+
+#search-cancel.show {
+    opacity: 1;
+    display: block;
+    transition: opacity ease 0.2s, display step-end 0.2s;
+}
+
+.result, #greeting, #no-results, #error-message {
+    margin: 1.5rem auto;
+    width: 50rem;
+    max-width: calc(100% - 3rem);
+}
+
+.result {
+    opacity: 0;
+    transform: translateY(50%);
+    min-height: auto;
+}
+
+.result.show {
+    transition: opacity ease-out 0.4s, transform ease-out 0.4s;
+    opacity: 1;
+    transform: none;
+}
+
+#footer {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#progress {
+    width: 100%;
+    opacity: 0;
+    transition: opacity ease 0.2s;
+}
+
+#progress.active {
+    opacity: 1;
+}
+
+#greeting, #no-results, #error-message {
+    opacity: 0;
+    display: none;
+    transition: opacity ease 0.2s, display step-end 0.2s;
+}
+
+#greeting.active, #no-results.active, #error-message.active {
+    opacity: 1;
+    display: block;
+    transition: opacity ease 0.2s, display step-start 0.2s;
+}
+
+#greeting > p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+#no-results, #error-message {
+    font-size: 2em;
+    line-height: 1.15em;
+}
+
+
+#no-results > i, #error-message > i {
+    font-size: 1em;
+}
+
+#error-message {
+    color: #f44336;
+}
